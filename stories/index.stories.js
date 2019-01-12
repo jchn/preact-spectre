@@ -1,23 +1,22 @@
 import { h } from 'preact'
-
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
+import { Table } from '../src/'
 
-import { Button, Welcome } from '@storybook/react/demo'
-
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
+storiesOf('Table', module).add('default', () => (
+  <Table striped>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>genre</th>
+        <th>release date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="active">
+        <td>The Shawshank Redemption</td>
+        <td>Crime, Drama</td>
+        <td>14 October 1994</td>
+      </tr>
+    </tbody>
+  </Table>
 ))
-
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ))
