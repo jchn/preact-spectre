@@ -1,0 +1,29 @@
+{
+  "name": "preact-spectre",
+  "version": "1.0.0",
+  "description": "Preact components using spectre.css",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "preact",
+    "spectre"
+  ],
+  "author": "John van de Water",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^4.1.6",
+    "@storybook/addon-links": "^4.1.6",
+    "@storybook/addons": "^4.1.6",
+    "@storybook/react": "^4.1.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-preact": "^1.1.0",
+    "preact-compat": "^3.18.4"
+  }
+}
