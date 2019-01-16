@@ -1,5 +1,8 @@
 import { h } from 'preact'
 
+export const pipe = (head, ...tail) => (...args) =>
+  tail.reduce((acc, curr) => curr.call(null, acc), head.apply(null, args))
+
 export const classModifiers = mapping => props =>
   Object.entries(mapping)
     .filter(([key, className]) => {
@@ -45,6 +48,7 @@ const renameProp = (from, to) => obj => {
     )
 }
 
+// TODO: rename to renameProps
 export const toDOMAttrs = mapping => props => {
   const renameOps = Object.entries(mapping).map(([from, to]) =>
     renameProp(from, to)
@@ -54,6 +58,14 @@ export const toDOMAttrs = mapping => props => {
   }, props)
 }
 
-export const withToDOMAttrs = mapping => Component => props => {
-  return <Component {...toDOMAttrs(mapping)(props)} />
+// TODO: rename to withRenameProps
+export const withToDOMAttrs = (
+  mapping,
+  keepOriginal = false
+) => Component => props => {
+  return (
+    <Component
+      {...Object.assign(toDOMAttrs(mapping)(props), keepOriginal ? props : {})}
+    />
+  )
 }

@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { withClassModifiers } from './utils'
+import { pipe, withClassModifiers, withToDOMAttrs } from './utils'
 
 const modifiers = {
   // colors
@@ -50,8 +50,19 @@ const modifiers = {
   textTransform: transform => `text-${transform}`,
   fontWeight: weight => `text-${weight}`,
   textOverflow: type => `text-${type}`,
+
+  badge: 'badge',
+  tooltip: 'tooltip',
+}
+
+const DOMAttributes = {
+  badgeText: 'data-badge',
+  tooltipText: 'data-tooltip',
 }
 
 const Box = ({ is: Tag, ...props }) => <Tag {...props} />
 
-export default withClassModifiers(modifiers)(Box)
+export default pipe(
+  withClassModifiers(modifiers),
+  withToDOMAttrs(DOMAttributes, true)
+)(Box)
