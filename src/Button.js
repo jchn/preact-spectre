@@ -11,6 +11,7 @@ const buttonModifiers = {
   active: 'active',
   disabled: 'disabled',
   loading: 'loading',
+  clear: 'clear',
 }
 
 export default withClassModifiers(buttonModifiers)(

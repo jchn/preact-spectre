@@ -3,6 +3,7 @@ import { createComponent, withClassModifiers } from './utils'
 
 const barClassModifiers = {
   sm: 'bar-sm',
+  slider: 'bar-slider',
 }
 
 const Bar = withClassModifiers(barClassModifiers)(createComponent('div', 'bar'))
@@ -15,6 +16,9 @@ const BarItem = ({ progress, children, background, ...props }) => (
   </BarItemBase>
 )
 
+const SliderButton = createComponent('div', 'bar-slider-btn btn')
+
 Bar.Item = BarItem
+Bar.SliderButton = SliderButton
 
 export default Bar
