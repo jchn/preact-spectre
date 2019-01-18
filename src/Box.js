@@ -53,6 +53,10 @@ const modifiers = {
 
   badge: 'badge',
   tooltip: 'tooltip',
+  'tooltip-top': 'tooltip tooltip-top',
+  'tooltip-right': 'tooltip tooltip-right',
+  'tooltip-bottom': 'tooltip tooltip-bottom',
+  'tooltip-left': 'tooltip tooltip-left',
 
   h1: 'h1',
   h2: 'h2',

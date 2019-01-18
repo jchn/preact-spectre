@@ -25,7 +25,10 @@ export const withClassModifiers = modifiers => Component => props => {
     }, {})
 
   return (
-    <Component {...filteredProps} class={classModifiers(modifiers)(props)} />
+    <Component
+      {...filteredProps}
+      class={`${props.class} ${classModifiers(modifiers)(props)}`}
+    />
   )
 }
 

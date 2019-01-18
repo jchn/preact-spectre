@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Button from '../src/Button'
 import Accordion from '../src/Accordion'
@@ -13,8 +14,17 @@ import Empty from '../src/Empty'
 import Menu from '../src/Menu'
 import Label from '../src/Label'
 import Modal from '../src/Modal'
+import Nav from '../src/Nav'
+import Pagination from '../src/Pagination'
+import Panel from '../src/Panel'
+import Popover from '../src/Popover'
+import Steps from '../src/Steps'
+import Tabs from '../src/Tabs'
+import Tile from '../src/Tile'
+import Toast from '../src/Toast'
 
 storiesOf('Components', module)
+  .addDecorator(centered)
   .add('Accordion', () => (
     <div>
       <Accordion exclusive>
@@ -194,4 +204,194 @@ storiesOf('Components', module)
         <Button link>Close</Button>
       </Modal.Footer>
     </Modal>
+  ))
+  .add('Nav', () => (
+    <Nav>
+      <Nav.Item>
+        <a href="#">Elements</a>
+      </Nav.Item>
+      <Nav.Item active>
+        <a href="#">Layout</a>
+        <Nav>
+          <Nav.Item>
+            <a href="#">Flexbox Grid</a>
+          </Nav.Item>
+          <Nav.Item>
+            <a href="#">Responsive</a>
+          </Nav.Item>
+          <Nav.Item>
+            <a href="#">Navbar</a>
+          </Nav.Item>
+          <Nav.Item>
+            <a href="#">Empty states</a>
+          </Nav.Item>
+        </Nav>
+      </Nav.Item>
+      <Nav.Item>
+        <a href="#">Components</a>
+      </Nav.Item>
+      <Nav.Item>
+        <a href="#">Utilities</a>
+      </Nav.Item>
+    </Nav>
+  ))
+  .add('Pagination', () => (
+    <div>
+      <Pagination>
+        <Pagination.Item disabled>
+          <a href="#" tabindex="-1">
+            Previous
+          </a>
+        </Pagination.Item>
+        <Pagination.Item active>
+          <a href="#">1</a>
+        </Pagination.Item>
+        <Pagination.Item>
+          <a href="#">2</a>
+        </Pagination.Item>
+        <Pagination.Item>
+          <a href="#">3</a>
+        </Pagination.Item>
+        <Pagination.Item>
+          <span>&hellip;</span>
+        </Pagination.Item>
+        <Pagination.Item>
+          <a href="#">12</a>
+        </Pagination.Item>
+        <Pagination.Item>
+          <a href="#">Next</a>
+        </Pagination.Item>
+      </Pagination>
+
+      <Pagination>
+        <Pagination.Item prev>
+          <a href="#">
+            <Pagination.Item.Subtitle>Previous</Pagination.Item.Subtitle>
+            <Pagination.Item.Title class="h5">
+              Getting started
+            </Pagination.Item.Title>
+          </a>
+        </Pagination.Item>
+        <Pagination.Item next>
+          <a href="#">
+            <Pagination.Item.Subtitle>Next</Pagination.Item.Subtitle>
+            <Pagination.Item.Title class="h5">Layout</Pagination.Item.Title>
+          </a>
+        </Pagination.Item>
+      </Pagination>
+    </div>
+  ))
+  .add('Panels', () => (
+    <Panel>
+      <Panel.Header>
+        <Panel.Header.Title class="h6">Comments</Panel.Header.Title>
+      </Panel.Header>
+      <Panel.Nav>navigation</Panel.Nav>
+      <Panel.Body>body</Panel.Body>
+      <Panel.Footer>
+        <Button primary block>
+          Save
+        </Button>
+      </Panel.Footer>
+    </Panel>
+  ))
+  .add('Popovers', () => (
+    <div>
+      <Popover top target={<Button primary>top popover</Button>}>
+        <Card>
+          <Card.Header>card header</Card.Header>
+          <Card.Body>card body</Card.Body>
+          <Card.Footer>card footer</Card.Footer>
+        </Card>
+      </Popover>
+      <Popover right target={<Button primary>right popover</Button>}>
+        <Card>
+          <Card.Header>card header</Card.Header>
+          <Card.Body>card body</Card.Body>
+          <Card.Footer>card footer</Card.Footer>
+        </Card>
+      </Popover>
+      <Popover bottom target={<Button primary>bottom popover</Button>}>
+        <Card>
+          <Card.Header>card header</Card.Header>
+          <Card.Body>card body</Card.Body>
+          <Card.Footer>card footer</Card.Footer>
+        </Card>
+      </Popover>
+      <Popover left target={<Button primary>left popover</Button>}>
+        <Card>
+          <Card.Header>card header</Card.Header>
+          <Card.Body>card body</Card.Body>
+          <Card.Footer>card footer</Card.Footer>
+        </Card>
+      </Popover>
+    </div>
+  ))
+  .add('Steps', () => (
+    <Steps>
+      <Steps.Item>
+        <a href="#">Step 1</a>
+      </Steps.Item>
+      <Steps.Item>
+        <a href="#">Step 2</a>
+      </Steps.Item>
+      <Steps.Item active>
+        <a href="#">Step 3</a>
+      </Steps.Item>
+      <Steps.Item>
+        <a href="#">Step 4</a>
+      </Steps.Item>
+    </Steps>
+  ))
+  .add('Tabs', () => (
+    <Tabs>
+      <Tabs.Item active>
+        <a href="#">Music</a>
+      </Tabs.Item>
+      <Tabs.Item>
+        <a href="#">Playlist</a>
+      </Tabs.Item>
+      <Tabs.Item>
+        <a href="#">Radio</a>
+      </Tabs.Item>
+      <Tabs.Item action>
+        <a href="#">action</a>
+      </Tabs.Item>
+    </Tabs>
+  ))
+  .add('Tiles', () => (
+    <Tile centered>
+      <Tile.Icon>
+        <Avatar lg src={faker.internet.avatar()} />
+      </Tile.Icon>
+      <Tile.Content>
+        <Tile.Content.Title>The Avengers</Tile.Content.Title>
+        <Tile.Content.Subtitle>
+          Earth's Mightiest Heroes joined forces to take on threats that were
+          too big for any one hero to tackle...
+        </Tile.Content.Subtitle>
+      </Tile.Content>
+      <Tile.Action>
+        <Button primary>Join</Button>
+      </Tile.Action>
+    </Tile>
+  ))
+  .add('Toasts', () => (
+    <div>
+      <Toast>
+        Toast <Button clear class="float-right" />
+      </Toast>
+      <Toast primary>
+        Toast primary <Button clear class="float-right" />
+      </Toast>
+      <Toast success>
+        Toast success <Button clear class="float-right" />
+      </Toast>
+      <Toast warning>
+        Toast warning <Button clear class="float-right" />
+      </Toast>
+      <Toast error>
+        Toast error <Button clear class="float-right" />
+      </Toast>
+    </div>
   ))
