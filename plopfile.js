@@ -13,6 +13,12 @@ module.exports = function(plop) {
         name: 'className',
         message: 'Class name?',
       },
+      {
+        type: 'list',
+        name: 'storybookType',
+        message: 'Storybook root hierarchy type?',
+        choices: ['Components', 'Elements'],
+      },
     ],
 
     actions: [

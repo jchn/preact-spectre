@@ -3,7 +3,8 @@ import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import {{pascalCase name}} from './'
 
-storiesOf('Components|{{pascalCase name}}', module)
+storiesOf('{{storybookType}}|{{pascalCase name}}', module)
+.addDecorator(centered)
 .add('Default', () => (
 < {{pascalCase name}} />
 ))

@@ -1,9 +1,12 @@
 import { h } from 'preact'
+import PropTypes from 'prop-types'
 import { createComponent, withClassModifiers } from '../../utils'
 
 const {{pascalCase name}}ClassModifiers = {}
 
 const {{pascalCase name}} = withClassModifiers({{pascalCase name}}ClassModifiers)(createComponent('div',
 '{{className}}'))
+
+{{pascalCase name}}.propTypes = {}
 
 export default {{pascalCase name}}
