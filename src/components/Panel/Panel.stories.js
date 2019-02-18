@@ -2,7 +2,7 @@ import { h } from 'preact'
 import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Panel from './'
-import Button from '../../Button'
+import Button from '../Button'
 
 storiesOf('Components|Panel', module).add('Default', () => (
   <Panel>

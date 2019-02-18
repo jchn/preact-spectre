@@ -3,7 +3,7 @@ import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Tile from './'
 import Avatar from '../Avatar'
-import Button from '../../Button'
+import Button from '../Button'
 import faker from 'faker'
 
 storiesOf('Components|Tile', module)

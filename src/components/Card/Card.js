@@ -1,12 +1,12 @@
 import { h } from 'preact'
 import { createComponent } from '../../utils'
-import { Image } from '../../Media'
+import Img from '../Img'
 
 const Card = createComponent('div', 'card')
 
 const CardImage = ({ src, alt, ...props }) => (
   <div class="card-image" {...props}>
-    <Image src={src} alt={alt} responsive />
+    <Img src={src} alt={alt} responsive />
   </div>
 )
 

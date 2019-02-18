@@ -2,7 +2,7 @@ import { h } from 'preact'
 import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Popover from './'
-import Button from '../../Button'
+import Button from '../Button'
 import Card from '../Card'
 
 storiesOf('Components|Popover', module)

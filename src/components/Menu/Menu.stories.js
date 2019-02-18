@@ -2,7 +2,7 @@ import { h } from 'preact'
 import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Menu from './'
-import Label from '../../Label'
+import Label from '../Label'
 
 storiesOf('Components|Menu', module)
   .addDecorator(centered)

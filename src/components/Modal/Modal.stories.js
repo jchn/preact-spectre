@@ -2,7 +2,7 @@ import { h } from 'preact'
 import centered from '@storybook/addon-centered'
 import { storiesOf } from '@storybook/react'
 import Modal from './'
-import Button from '../../Button'
+import Button from '../Button'
 
 storiesOf('Components|Modal', module).add('Default', () => (
   <Modal open>
