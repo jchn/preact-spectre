@@ -7,6 +7,18 @@ import Card from '../Card'
 
 storiesOf('Components|Popover', module)
   .addDecorator(centered)
+  .add('Default', () => (
+    <Popover target={<Button primary>popover</Button>}>
+      <Card>
+        <Card.Header>card header</Card.Header>
+        <Card.Body>card body</Card.Body>
+        <Card.Footer>card footer</Card.Footer>
+      </Card>
+    </Popover>
+  ))
+
+storiesOf('Components|Popover/position', module)
+  .addDecorator(centered)
   .add('top', () => (
     <Popover position="top" target={<Button primary>top popover</Button>}>
       <Card>
