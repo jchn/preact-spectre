@@ -17,7 +17,7 @@ module.exports = function(plop) {
         type: 'list',
         name: 'storybookType',
         message: 'Storybook root hierarchy type?',
-        choices: ['Components', 'Elements'],
+        choices: ['Components', 'Elements', 'Layout'],
       },
     ],
 
