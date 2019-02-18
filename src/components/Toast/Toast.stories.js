@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import Toast from './'
 import Button from '../../Button'
 
-storiesOf('Components|Toast', module).add('Deafault', () => (
+storiesOf('Components|Toast', module).add('Default', () => (
   <Toast>
     Toast <Button clear class="float-right" />
   </Toast>
