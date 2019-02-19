@@ -1,0 +1,9 @@
+import { h } from 'preact'
+import centered from '@storybook/addon-centered'
+import { storiesOf } from '@storybook/react'
+
+storiesOf('Recipes|{{pascalCase name}}', module)
+.addDecorator(centered)
+.add('Default', () => (
+<div>{{pascalCase name}}</div>
+))
