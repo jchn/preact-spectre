@@ -1,7 +1,8 @@
 import Columns from './Columns'
 import Col from './Col'
-export { default as Container } from './Container'
+import Container from './Container'
 
-Columns.Col = Col
+Container.Columns = Columns
+Container.Col = Col
 
-export default Columns
+export default Container
