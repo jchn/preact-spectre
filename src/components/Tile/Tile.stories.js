@@ -13,11 +13,11 @@ storiesOf('Components|Tile', module)
         <Avatar size="lg" src={faker.internet.avatar()} />
       </Tile.Icon>
       <Tile.Content>
-        <Tile.Content.Title>The Avengers</Tile.Content.Title>
-        <Tile.Content.Subtitle>
+        <Tile.Title>The Avengers</Tile.Title>
+        <Tile.Subtitle>
           Earth's Mightiest Heroes joined forces to take on threats that were
           too big for any one hero to tackle...
-        </Tile.Content.Subtitle>
+        </Tile.Subtitle>
         <Button primary>Join</Button> <Button>Contact</Button>
       </Tile.Content>
     </Tile>
@@ -28,11 +28,11 @@ storiesOf('Components|Tile', module)
         <Avatar size="lg" src={faker.internet.avatar()} />
       </Tile.Icon>
       <Tile.Content>
-        <Tile.Content.Title>The Avengers</Tile.Content.Title>
-        <Tile.Content.Subtitle>
+        <Tile.Title>The Avengers</Tile.Title>
+        <Tile.Subtitle>
           Earth's Mightiest Heroes joined forces to take on threats that were
           too big for any one hero to tackle...
-        </Tile.Content.Subtitle>
+        </Tile.Subtitle>
       </Tile.Content>
       <Tile.Action>
         <Button primary>Join</Button>

@@ -16,8 +16,8 @@ const TileAction = createComponent('div', 'tile-action')
 
 Tile.Icon = TileIcon
 Tile.Content = TileContent
-Tile.Content.Title = TileContentTitle
-Tile.Content.Subtitle = TileContentSubtitle
+Tile.Title = TileContentTitle
+Tile.Subtitle = TileContentSubtitle
 Tile.Action = TileAction
 
 Tile.propTypes = {

@@ -7,7 +7,7 @@ import Button from '../Button'
 storiesOf('Components|Panel', module).add('Default', () => (
   <Panel>
     <Panel.Header>
-      <Panel.Header.Title class="h6">Comments</Panel.Header.Title>
+      <Panel.Title class="h6">Comments</Panel.Title>
     </Panel.Header>
     <Panel.Nav>navigation</Panel.Nav>
     <Panel.Body>body</Panel.Body>
