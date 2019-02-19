@@ -40,4 +40,23 @@ module.exports = function(plop) {
       },
     ],
   })
+
+  plop.setGenerator('recipe', {
+    description: 'recipe',
+
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Recipe name?',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/recipes/{{pascalCase name}}/{{pascalCase name}}.stories.js',
+        templateFile: 'templates/recipe/recipe.stories.hbs',
+      },
+    ],
+  })
 }
