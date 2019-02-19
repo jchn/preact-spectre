@@ -8,7 +8,11 @@ const generateColClass = nCols => {
   if (typeof nCols === 'number') return `col-${nCols}`
 
   if (Array.isArray(nCols)) {
-    return nCols.map((n, i) => `col-${sizes[i]}-${n}`).join(' ')
+    return nCols
+      .map((n, i) =>
+        i + 1 === nCols.length ? `col-${n}` : `col-${sizes[i]}-${n}`
+      )
+      .join(' ')
   }
 }
 
