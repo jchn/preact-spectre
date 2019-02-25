@@ -1,4 +1,4 @@
 {
-  "presets": ["preact"],
+  "presets": ["@babel/preset-env", "./babel-preset-preact"],
   "plugins": ["transform-object-rest-spread"]
 }
