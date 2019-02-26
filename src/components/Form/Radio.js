@@ -4,8 +4,8 @@ import { createComponent } from '../../utils'
 
 const Base = createComponent('label', 'form-radio', inputClassModifiers)
 
-const Radio = ({ label, class: c, ...props }) => (
-  <Base class={c}>
+const Radio = ({ label, class: c, error, success, ...props }) => (
+  <Base class={c} error={error} success={success}>
     <input type="radio" {...props} />
     <i class="form-icon" /> {label}
   </Base>
