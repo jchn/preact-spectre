@@ -7,7 +7,7 @@ const tableModifiers = {
   hover: 'table-hover',
 }
 
-const Base = createComponent('table', tableModifiers)
+const Base = createComponent('table', 'table', tableModifiers)
 
 const Table = props => <Base {...props} />
 

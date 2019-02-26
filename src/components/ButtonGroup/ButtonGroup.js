@@ -6,7 +6,7 @@ const buttonGroupModifiers = {
   block: 'btn-group-block',
 }
 
-const Base = createComponent('btn-group', buttonGroupModifiers)
+const Base = createComponent('div', 'btn-group', buttonGroupModifiers)
 
 const ButtonGroup = props => <Base {...props} />
 
