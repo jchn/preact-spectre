@@ -1,5 +1,12 @@
+import { h } from 'preact'
 import { createComponent } from '../../utils'
 
-const Chip = createComponent('div', 'chip')
+const Base = createComponent('div', 'chip')
+
+const Chip = props => <Base {...props} />
+
+Chip.defaultProps = {
+  is: 'div',
+}
 
 export default Chip

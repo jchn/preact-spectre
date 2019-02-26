@@ -1,3 +1,4 @@
+import { h } from 'preact'
 import { withClassModifiers, createComponent } from '../../utils'
 
 const tableModifiers = {
@@ -6,6 +7,12 @@ const tableModifiers = {
   hover: 'table-hover',
 }
 
-export default withClassModifiers(tableModifiers)(
-  createComponent('table', 'table')
-)
+const Base = createComponent('table', tableModifiers)
+
+const Table = props => <Base {...props} />
+
+Table.defaultProps = {
+  is: 'table',
+}
+
+export default Table

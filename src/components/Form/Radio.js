@@ -1,12 +1,14 @@
 import { h } from 'preact'
 import inputClassModifiers from './inputClassModifiers'
-import { withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
+
+const Base = createComponent('label', 'form-radio', inputClassModifiers)
 
 const Radio = ({ label, class: c, ...props }) => (
-  <label class={`form-radio ${c}`}>
+  <Base class={c}>
     <input type="radio" {...props} />
     <i class="form-icon" /> {label}
-  </label>
+  </Base>
 )
 
-export default withClassModifiers(inputClassModifiers)(Radio)
+export default Radio

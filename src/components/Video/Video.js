@@ -1,8 +1,8 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
-const VideoClassModifiers = {
+const videoClassModifiers = {
   responsive: responsive =>
     `video-responsive ${
       responsive && typeof responsive === 'string'
@@ -11,9 +11,7 @@ const VideoClassModifiers = {
     }`,
 }
 
-const Video = withClassModifiers(VideoClassModifiers)(
-  createComponent('div', 'video')
-)
+const Video = createComponent('div', 'video', videoClassModifiers)
 
 Video.propTypes = {}
 

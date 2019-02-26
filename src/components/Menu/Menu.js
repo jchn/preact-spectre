@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { createComponent, withToDOMAttrs } from '../../utils'
+import { createComponent } from '../../utils'
 
 const Menu = createComponent('ul', 'menu')
 
@@ -7,9 +7,7 @@ const menuDividerAttrs = {
   title: 'data-content',
 }
 
-const MenuDivider = withToDOMAttrs(menuDividerAttrs)(
-  createComponent('li', 'divider')
-)
+const MenuDivider = createComponent('li', 'divider', {}, menuDividerAttrs)
 
 MenuDivider.propTypes = {
   title: PropTypes.string,

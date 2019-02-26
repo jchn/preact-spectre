@@ -1,6 +1,6 @@
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 import inputClassModifiers from './inputClassModifiers'
 
-const Textarea = createComponent('textarea', 'form-input')
+const Textarea = createComponent('textarea', 'form-input', inputClassModifiers)
 
-export default withClassModifiers(inputClassModifiers)(Textarea)
+export default Textarea

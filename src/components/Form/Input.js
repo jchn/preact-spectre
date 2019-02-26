@@ -1,4 +1,4 @@
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 import classModifiers from './inputClassModifiers'
 
 const inputClassModifiers = {
@@ -7,8 +7,6 @@ const inputClassModifiers = {
   ...classModifiers,
 }
 
-const Input = withClassModifiers(inputClassModifiers)(
-  createComponent('input', 'form-input')
-)
+const Input = createComponent('input', 'form-input', inputClassModifiers)
 
 export default Input

@@ -1,12 +1,14 @@
 import { h } from 'preact'
-import { withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 import inputClassModifiers from './inputClassModifiers'
 
+const Base = createComponent('label', 'form-switch', inputClassModifiers)
+
 const Switch = ({ label, class: c, ...props }) => (
-  <label class={`form-switch ${c}`}>
+  <Base class={c}>
     <input type="checkbox" {...props} />
     <i class="form-icon" /> {label}
-  </label>
+  </Base>
 )
 
-export default withClassModifiers(inputClassModifiers)(Switch)
+export default Switch

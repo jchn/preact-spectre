@@ -1,10 +1,10 @@
 import { h } from 'preact'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const formModifiers = {
   horizontal: 'form-horizontal',
 }
 
-const Form = withClassModifiers(formModifiers)(createComponent('form'))
+const Form = createComponent('form', '', formModifiers)
 
 export default Form

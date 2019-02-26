@@ -1,12 +1,10 @@
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const formGroupClassModifiers = {
   success: 'has-success',
   error: 'has-error',
 }
 
-const FormGroup = withClassModifiers(formGroupClassModifiers)(
-  createComponent('div', 'form-group')
-)
+const FormGroup = createComponent('div', 'form-group', formGroupClassModifiers)
 
 export default FormGroup

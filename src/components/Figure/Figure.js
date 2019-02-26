@@ -1,12 +1,10 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const FigureClassModifiers = {}
 
-const Figure = withClassModifiers(FigureClassModifiers)(
-  createComponent('figure', 'figure')
-)
+const Figure = createComponent('figure', 'figure', FigureClassModifiers)
 
 Figure.propTypes = {}
 

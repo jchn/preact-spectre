@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types'
-import { withClassModifiers, createComponent } from '../../utils'
+import { createComponent } from '../../utils'
 
 const navItemClassModifiers = {
   active: 'active',
 }
 
 const Nav = createComponent('ul', 'nav')
-const NavItem = withClassModifiers(navItemClassModifiers)(
-  createComponent('li', 'nav-item')
-)
+const NavItem = createComponent('li', 'nav-item', navItemClassModifiers)
 
 NavItem.propTypes = {
   active: PropTypes.bool,

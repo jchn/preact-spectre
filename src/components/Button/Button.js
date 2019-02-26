@@ -1,6 +1,6 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const shapeClasses = {
   circle: 's-circle',
@@ -19,9 +19,15 @@ const buttonModifiers = {
   size: size => `btn-${size}`,
 }
 
-const Button = withClassModifiers(buttonModifiers)(
-  createComponent('button', 'btn')
-)
+const Base = createComponent('button', 'btn', buttonModifiers)
+
+const Button = props => <Base {...props} />
+
+Button.defaultProps = {
+  is: 'button',
+}
+
+Button.displayName = 'Button'
 
 Button.propTypes = {
   intent: PropTypes.oneOf(['primary', 'success', 'error']),

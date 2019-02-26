@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const tabsClassModifiers = {
   block: 'tab-block',
 }
 
-const Tabs = withClassModifiers(tabsClassModifiers)(
-  createComponent('ul', 'tab')
-)
+const Tabs = createComponent('ul', 'tab', tabsClassModifiers)
 
 Tabs.propTypes = {
   block: PropTypes.bool,
@@ -18,9 +16,7 @@ const tabItemClassModifiers = {
   action: 'tab-action',
 }
 
-const TabItem = withClassModifiers(tabItemClassModifiers)(
-  createComponent('li', 'tab-item')
-)
+const TabItem = createComponent('li', 'tab-item', tabItemClassModifiers)
 
 TabItem.propTypes = {
   active: PropTypes.bool,
