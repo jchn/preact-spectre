@@ -1,14 +1,14 @@
 import { h } from 'preact'
-import { withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 import inputClassModifiers from './inputClassModifiers'
 
-const Checkbox = withClassModifiers(inputClassModifiers)(
-  ({ label, class: c, ...props }) => (
-    <label class={`form-checkbox ${c}`}>
-      <input type="checkbox" {...props} />
-      <i class="form-icon" /> {label}
-    </label>
-  )
+const Base = createComponent('label', 'form-checkbox', inputClassModifiers)
+
+const Checkbox = ({ label, class: c, error, success, ...props }) => (
+  <Base class={c} error={error} success={success}>
+    <input type="checkbox" {...props} />
+    <i class="form-icon" /> {label}
+  </Base>
 )
 
 export default Checkbox

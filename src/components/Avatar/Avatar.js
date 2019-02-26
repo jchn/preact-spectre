@@ -1,6 +1,11 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { pipe, withClassModifiers, withToDOMAttrs } from '../../utils'
+import {
+  createComponent,
+  pipe,
+  withClassModifiers,
+  withToDOMAttrs,
+} from '../../utils'
 
 const avatarClassModifiers = {
   size: size => `avatar-${size}`,
@@ -10,27 +15,24 @@ const avatarDOMAttributes = {
   initial: 'data-initial',
 }
 
-const AvatarBase = ({
-  src,
-  alt,
-  initial,
-  icon,
-  presence,
-  style,
-  class: className,
-  ...props
-}) => (
-  <figure class={`avatar ${className}`} {...props}>
+const AvatarBase = createComponent(
+  'figure',
+  'avatar',
+  avatarClassModifiers,
+  avatarDOMAttributes
+)
+
+const Avatar = ({ src, alt, icon, presence, ...props }) => (
+  <AvatarBase {...props}>
     {src && <img src={src} alt={alt} />}
     {icon && <img class="avatar-icon" src={icon} alt="avatar-icon" />}
     {presence && <i class={`avatar-presence ${presence}`} />}
-  </figure>
+  </AvatarBase>
 )
 
-const Avatar = pipe(
-  withClassModifiers(avatarClassModifiers),
-  withToDOMAttrs(avatarDOMAttributes)
-)(AvatarBase)
+Avatar.defaultProps = {
+  is: 'figure',
+}
 
 Avatar.propTypes = {
   src: PropTypes.string,

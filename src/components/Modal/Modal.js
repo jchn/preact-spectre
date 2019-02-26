@@ -1,15 +1,13 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const modalClassModifiers = {
   open: 'active',
   size: size => `modal-${size}`,
 }
 
-const BackdropBase = withClassModifiers(modalClassModifiers)(
-  createComponent('div', 'modal')
-)
+const BackdropBase = createComponent('div', 'modal', modalClassModifiers)
 const ModalContainer = createComponent('div', 'modal-container')
 
 const Modal = ({ children, ...props }) => (

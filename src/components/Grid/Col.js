@@ -1,6 +1,6 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl']
 
@@ -20,9 +20,7 @@ const ColumnsClassModifiers = {
   col: generateColClass,
 }
 
-const Columns = withClassModifiers(ColumnsClassModifiers)(
-  createComponent('div', 'column')
-)
+const Columns = createComponent('div', 'column', ColumnsClassModifiers)
 
 Columns.propTypes = {
   col: PropTypes.oneOfType([

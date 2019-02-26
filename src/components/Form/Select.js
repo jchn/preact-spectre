@@ -7,8 +7,6 @@ const selectClassModifiers = {
   ...inputClassModifiers,
 }
 
-const Select = withClassModifiers(selectClassModifiers)(
-  createComponent('select', 'form-select')
-)
+const Select = createComponent('select', 'form-select', selectClassModifiers)
 
 export default Select

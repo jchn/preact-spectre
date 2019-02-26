@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const Pagination = createComponent('ul', 'pagination')
 
@@ -10,8 +10,10 @@ const paginationItemClassModifiers = {
   next: 'page-next',
 }
 
-const PaginationItem = withClassModifiers(paginationItemClassModifiers)(
-  createComponent('li', 'page-item')
+const PaginationItem = createComponent(
+  'li',
+  'page-item',
+  paginationItemClassModifiers
 )
 
 PaginationItem.propTypes = {

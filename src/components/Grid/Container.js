@@ -1,14 +1,12 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const ColumnsClassModifiers = {
   size: size => `grid-${size}`,
 }
 
-const Columns = withClassModifiers(ColumnsClassModifiers)(
-  createComponent('div', 'container')
-)
+const Columns = createComponent('div', 'container', ColumnsClassModifiers)
 
 Columns.propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),

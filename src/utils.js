@@ -1,41 +1,47 @@
 import { h } from 'preact'
 
-export const pipe = (head, ...tail) => (...args) =>
-  tail.reduce((acc, curr) => curr.call(null, acc), head.apply(null, args))
-
-export const classModifiers = mapping => props =>
+export const mapPropsToClasses = (mapping, props) =>
   Object.entries(mapping)
     .filter(([key, className]) => {
       return props[key]
     })
-    .map(([key, className]) =>
-      typeof className === 'function' ? className(props[key]) : className
-    )
+    .map(([key, className]) => {
+      if (typeof className === 'string') return className
+
+      if (typeof className === 'function') return className(props[key])
+    })
+    .filter(v => v)
     .join(' ')
 
-export const withClassModifiers = modifiers => Component => props => {
-  const modifierKeys = Object.keys(modifiers)
-
-  const filteredProps = Object.entries(props)
-    .filter(([k, v]) => {
-      return !modifierKeys.includes(k)
-    })
-    .reduce((acc, [k, v]) => {
-      return Object.assign(acc, { [k]: v })
-    }, {})
-
-  return (
-    <Component
-      {...filteredProps}
-      class={`${props.class || ''} ${classModifiers(modifiers)(props) ||
-        ''}`.trim()}
-    />
-  )
+export const omit = (keys, obj) => {
+  const newObj = Object.assign({}, obj)
+  for (const k of keys) {
+    delete newObj[k]
+  }
+  return newObj
 }
 
-export const createComponent = (Tag, classes) => props => (
-  <Tag {...props} class={`${classes} ${props.class || ''}`.trim()} />
-)
+export const createComponent = (
+  is,
+  className,
+  propsToClasses = {},
+  propsToRename = {}
+) => ({ is: Tag = is, class: c = '', ...props }) => {
+  const classNames = `${className} ${mapPropsToClasses(
+    propsToClasses,
+    props
+  )} ${c}`.trim()
+  const attributes = renameProps(propsToRename, props)
+
+  const keysToFilter = [
+    ...Object.keys(propsToClasses),
+    ...Object.keys(propsToRename),
+  ]
+
+  const spreadProps = omit(keysToFilter, attributes)
+
+  return <Tag class={classNames} {...spreadProps} />
+}
 
 const renameProp = (from, to) => obj => {
   if (!obj.hasOwnProperty(from)) return obj
@@ -52,24 +58,11 @@ const renameProp = (from, to) => obj => {
     )
 }
 
-// TODO: rename to renameProps
-export const toDOMAttrs = mapping => props => {
+export const renameProps = (mapping, props) => {
   const renameOps = Object.entries(mapping).map(([from, to]) =>
     renameProp(from, to)
   )
   return renameOps.reduce((acc, rename) => {
     return rename(acc)
   }, props)
-}
-
-// TODO: rename to withRenameProps
-export const withToDOMAttrs = (
-  mapping,
-  keepOriginal = false
-) => Component => props => {
-  return (
-    <Component
-      {...Object.assign(toDOMAttrs(mapping)(props), keepOriginal ? props : {})}
-    />
-  )
 }

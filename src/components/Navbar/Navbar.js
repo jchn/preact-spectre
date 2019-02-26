@@ -1,12 +1,10 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const NavbarClassModifiers = {}
 
-const Navbar = withClassModifiers(NavbarClassModifiers)(
-  createComponent('div', 'navbar')
-)
+const Navbar = createComponent('div', 'navbar', NavbarClassModifiers)
 
 Navbar.propTypes = {}
 

@@ -1,15 +1,13 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const labelClassModifiers = {
   rounded: 'label-rounded',
   intent: intent => `label-${intent}`,
 }
 
-const Label = withClassModifiers(labelClassModifiers)(
-  createComponent('span', 'label')
-)
+const Label = createComponent('span', 'label', labelClassModifiers)
 
 Label.propTypes = {
   intent: PropTypes.oneOf([

@@ -1,9 +1,7 @@
 import { h } from 'preact'
-import { createComponent, withToDOMAttrs } from '../../utils'
+import { createComponent } from '../../utils'
 
-const Pre = withToDOMAttrs({
-  lang: 'data-lang',
-})(createComponent('pre', 'code'))
+const Pre = createComponent('pre', 'code', {}, { lang: 'data-lang' })
 
 export default ({ children, ...props }) => (
   <Pre {...props}>

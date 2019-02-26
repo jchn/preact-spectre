@@ -1,14 +1,12 @@
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const popoverClassModifiers = {
   position: pos => `popover-${pos}`,
 }
 
-const PopoverBase = withClassModifiers(popoverClassModifiers)(
-  createComponent('div', 'popover')
-)
+const PopoverBase = createComponent('div', 'popover', popoverClassModifiers)
 
 const Popover = ({ target, children, ...props }) => (
   <PopoverBase {...props}>

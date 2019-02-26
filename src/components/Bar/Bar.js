@@ -1,12 +1,12 @@
 import { h } from 'preact'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const barClassModifiers = {
   sm: 'bar-sm',
   slider: 'bar-slider',
 }
 
-const Bar = withClassModifiers(barClassModifiers)(createComponent('div', 'bar'))
+const Bar = createComponent('div', 'bar', barClassModifiers)
 
 const BarItemBase = createComponent('div', 'bar-item')
 

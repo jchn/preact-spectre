@@ -1,12 +1,15 @@
 import { h, cloneElement } from 'preact'
 import PropTypes from 'prop-types'
+import { createComponent } from '../../utils'
 
-const Accordion = ({ children, exclusive, arrow }) => (
-  <div class="accordion">
+const AccordionBase = createComponent('accordion', {})
+
+const Accordion = ({ children, exclusive, arrow, ...props }) => (
+  <AccordionBase class="accordion" {...props}>
     {children.map((element, i) =>
       cloneElement(element, { itemId: i, exclusive, arrow })
     )}
-  </div>
+  </AccordionBase>
 )
 
 Accordion.propTypes = {
@@ -14,8 +17,22 @@ Accordion.propTypes = {
   arrow: PropTypes.bool,
 }
 
-const AccordionItem = ({ children, title, itemId, exclusive, arrow, open }) => (
-  <span>
+Accordion.defaultProps = {
+  is: 'div',
+}
+
+const AccordionItemBase = createComponent('accordion-item', {})
+
+const AccordionItem = ({
+  children,
+  title,
+  itemId,
+  exclusive,
+  arrow,
+  open,
+  ...props
+}) => (
+  <AccordionItemBase {...props}>
     <input
       type={exclusive ? 'radio' : 'checkbox'}
       id={itemId}
@@ -28,7 +45,7 @@ const AccordionItem = ({ children, title, itemId, exclusive, arrow, open }) => (
       {title}
     </label>
     <div class="accordion-body">{children}</div>
-  </span>
+  </AccordionItemBase>
 )
 
 AccordionItem.propTypes = {
@@ -37,6 +54,10 @@ AccordionItem.propTypes = {
   exclusive: PropTypes.bool,
   arrow: PropTypes.bool,
   open: PropTypes.bool,
+}
+
+AccordionItem.defaultProps = {
+  is: 'span',
 }
 
 Accordion.Item = AccordionItem
