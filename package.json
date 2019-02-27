@@ -20,6 +20,7 @@
     "preact": "^8.4.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@storybook/addon-actions": "^4.1.11",
     "@storybook/addon-centered": "^4.1.11",
@@ -34,7 +35,9 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-preact": "^1.1.0",
     "faker": "^4.1.0",
+    "highlight.js": "^9.15.6",
     "jest": "^24.1.0",
+    "js-beautify": "^1.8.9",
     "plop": "^2.2.0",
     "preact-compat": "^3.18.4"
   }
