@@ -69,9 +69,13 @@ const path = (path, obj) => {
 const withDocs = (story, { parameters: { docs = {} } }) => {
   const { source } = docs
 
+  const docsTabs = []
+  if (source) docsTabs.push('Source')
+
   const storyResult = story()
   const docgenInfo = path(['nodeName', '__docgenInfo'], storyResult)
   const props = path(['props'], docgenInfo)
+  if (props) docsTabs.push('Props')
 
   const center = true
 
@@ -103,25 +107,27 @@ const withDocs = (story, { parameters: { docs = {} } }) => {
           >
             <div class={`p-2 ${center && 'text-center'}`}>{story()}</div>
           </Grid.Col>
-          <Grid.Col col={12}>
-            <DocsTabs tabs={['Source', 'Props']}>
-              {activeTab => {
-                if (activeTab === 0) {
-                  return (
-                    <Code lang="JSX">
-                      <Highlight source={source} />
-                    </Code>
-                  )
-                }
+          {docsTabs.length > 0 && (
+            <Grid.Col col={12}>
+              <DocsTabs tabs={docsTabs}>
+                {activeTab => {
+                  if (activeTab === 0) {
+                    return (
+                      <Code lang="JSX">
+                        <Highlight source={source} />
+                      </Code>
+                    )
+                  }
 
-                if (activeTab === 1 && props) {
-                  return <PropTable props={props} />
-                }
+                  if (activeTab === 1 && props) {
+                    return <PropTable props={props} />
+                  }
 
-                return null
-              }}
-            </DocsTabs>
-          </Grid.Col>
+                  return null
+                }}
+              </DocsTabs>
+            </Grid.Col>
+          )}
         </Grid.Columns>
       </Grid>
     </div>
