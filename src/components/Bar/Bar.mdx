@@ -1,0 +1,80 @@
+---
+name: Bar
+---
+
+# Bar
+
+import Bar from './Bar'
+import { Playground, PropsTable } from 'docz'
+
+## Properties
+
+<PropsTable of={Bar} />
+
+### Default
+
+Default Bar component:
+
+<Playground>
+  <Bar>
+    <Bar.Item
+      role="progressbar"
+      progress={50}
+      background="#818bd5"
+      aria-valuenow="50"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      50%
+    </Bar.Item>
+    <Bar.Item
+      role="progressbar"
+      progress={25}
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    />
+  </Bar>
+</Playground>
+
+### Small
+
+Add the `sm` prop to show a small version of the Bar component:
+
+<Playground>
+  <Bar sm>
+    <Bar.Item
+      role="progressbar"
+      progress={50}
+      background="#818bd5"
+      aria-valuenow="50"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    />
+    <Bar.Item
+      role="progressbar"
+      progress={25}
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    />
+  </Bar>
+</Playground>
+
+### Slider
+
+Add the `slider` prop and `Bar.SliderButton` to turn it into a slider:
+
+<Playground>
+  <Bar slider>
+    <Bar.Item
+      role="progressbar"
+      progress={25}
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <Bar.SliderButton />
+    </Bar.Item>
+  </Bar>
+</Playground>

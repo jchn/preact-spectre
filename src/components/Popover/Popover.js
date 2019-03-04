@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
@@ -17,6 +18,7 @@ const Popover = ({ target, children, ...props }) => (
 
 Popover.propTypes = {
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  target: PropTypes.node.isRequired,
 }
 
 export default Popover

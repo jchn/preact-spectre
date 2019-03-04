@@ -1,46 +1,55 @@
-import { h, cloneElement } from 'preact'
+// import { h, cloneElement } from 'preact'
+import React, { cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
-const AccordionBase = createComponent('accordion', {})
+const AccordionBase = createComponent('div', 'accordion', {})
 
-const Accordion = ({ children, exclusive, arrow, ...props }) => (
-  <AccordionBase class="accordion" {...props}>
+const Accordion = ({ children, exclusive, arrow, uid, ...props }) => (
+  <AccordionBase {...props}>
     {children.map((element, i) =>
-      cloneElement(element, { itemId: i, exclusive, arrow })
+      cloneElement(element, {
+        exclusive,
+        arrow,
+        uid: `${uid}-${i}`,
+        key: `${uid}-${i}`,
+      })
     )}
   </AccordionBase>
 )
 
 Accordion.propTypes = {
-  exlusive: PropTypes.bool,
+  exclusive: PropTypes.bool,
   arrow: PropTypes.bool,
+  /** to give each accordion item a unique identifier if there are multiple accordions */
+  uid: PropTypes.string.isRequired,
 }
 
 Accordion.defaultProps = {
   is: 'div',
+  exclusive: false,
 }
 
-const AccordionItemBase = createComponent('accordion-item', {})
+const AccordionItemBase = createComponent('div', 'accordion-item', {})
 
 const AccordionItem = ({
   children,
   title,
-  itemId,
   exclusive,
   arrow,
   open,
+  uid,
   ...props
 }) => (
   <AccordionItemBase {...props}>
     <input
       type={exclusive ? 'radio' : 'checkbox'}
-      id={itemId}
+      id={uid}
       name="accordion-checkbox"
       hidden
       checked={open}
     />
-    <label class="accordion-header" for={itemId}>
+    <label class="accordion-header" htmlFor={uid}>
       {arrow && <i class="icon icon-arrow-right mr-1" />}
       {title}
     </label>
@@ -49,8 +58,8 @@ const AccordionItem = ({
 )
 
 AccordionItem.propTypes = {
+  uid: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  itemId: PropTypes.string.isRequired,
   exclusive: PropTypes.bool,
   arrow: PropTypes.bool,
   open: PropTypes.bool,

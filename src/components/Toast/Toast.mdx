@@ -1,0 +1,40 @@
+---
+name: Toast
+---
+
+# Toast
+
+import Toast from './Toast'
+import Button from '../Button'
+import { Playground, PropsTable } from 'docz'
+
+## Properties
+
+<PropsTable of={Toast} />
+
+### Default
+
+<Playground>
+  <Toast>
+    Toast <Button clear class="float-right" />
+  </Toast>
+</Playground>
+
+### kind
+
+Change the color of the toast by setting the `kind` prop to one of: `primary`, `success`, `warning` or `error`
+
+<Playground>
+  <Toast kind="primary">
+    Primary Toast <Button clear class="float-right" />
+  </Toast>
+  <Toast kind="success">
+    Success Toast <Button clear class="float-right" />
+  </Toast>
+  <Toast kind="warning">
+    Warning Toast <Button clear class="float-right" />
+  </Toast>
+  <Toast kind="error">
+    Error Toast <Button clear class="float-right" />
+  </Toast>
+</Playground>

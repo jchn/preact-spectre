@@ -1,4 +1,6 @@
 import { h } from 'preact'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { withClassModifiers, createComponent } from '../../utils'
 
 const tableModifiers = {
@@ -10,6 +12,12 @@ const tableModifiers = {
 const Base = createComponent('table', 'table', tableModifiers)
 
 const Table = props => <Base {...props} />
+
+Table.propTypes = {
+  scroll: PropTypes.bool,
+  striped: PropTypes.bool,
+  hover: PropTypes.bool,
+}
 
 Table.defaultProps = {
   is: 'table',

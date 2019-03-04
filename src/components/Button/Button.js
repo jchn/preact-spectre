@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
@@ -15,7 +16,7 @@ const buttonModifiers = {
   clear: 'btn-clear',
   block: 'btn-block',
   shape: shape => `btn-action ${shapeClasses[shape]}`,
-  intent: intent => `btn-${intent}`,
+  kind: kind => `btn-${kind}`,
   size: size => `btn-${size}`,
 }
 
@@ -30,7 +31,7 @@ Button.defaultProps = {
 Button.displayName = 'Button'
 
 Button.propTypes = {
-  intent: PropTypes.oneOf(['primary', 'success', 'error']),
+  kind: PropTypes.oneOf(['primary', 'success', 'error']),
   size: PropTypes.oneOf(['sm', 'lg']),
   shape: PropTypes.oneOf(['circle', 'square']),
   link: PropTypes.bool,

@@ -1,0 +1,29 @@
+---
+name: Video
+---
+
+# Video
+
+import Video from './Video'
+import { Playground, PropsTable } from 'docz'
+
+## Properties
+
+<PropsTable of={Video} />
+
+### Responsive
+
+To change the way the video resizes set the `responsive` prop to one of `4-3`, `1-1` or `true`:
+
+<Playground>
+  <Video responsive="4-3">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/eRsGyueVLvQ"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </Video>
+</Playground>

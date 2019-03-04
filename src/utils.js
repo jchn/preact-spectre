@@ -1,3 +1,5 @@
+/** @jsx h */
+import React from 'react'
 import { h } from 'preact'
 
 export const mapPropsToClasses = (mapping, props) =>
@@ -39,6 +41,8 @@ export const createComponent = (
   ]
 
   const spreadProps = omit(keysToFilter, attributes)
+
+  let h = React.createElement
 
   return <Tag class={classNames} {...spreadProps} />
 }

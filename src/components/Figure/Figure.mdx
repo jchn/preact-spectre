@@ -1,0 +1,23 @@
+---
+name: Figure
+---
+
+# Figure
+
+import Figure from './Figure'
+import Img from '../Img'
+import { Playground, PropsTable } from 'docz'
+import faker from 'faker'
+
+<Playground>
+  <Figure>
+    <Img
+      responsive
+      src={faker.image.nature(800, 600)}
+      width="800"
+      height="600"
+      alt="Nature"
+    />
+    <Figure.Caption class="text-center">Nature</Figure.Caption>
+  </Figure>
+</Playground>

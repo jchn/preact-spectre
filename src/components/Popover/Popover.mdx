@@ -1,0 +1,28 @@
+---
+name: Popover
+---
+
+# Popover
+
+import Popover from './Popover'
+import Button from '../Button'
+import Card from '../Card'
+import { Playground, PropsTable } from 'docz'
+
+## Properties
+
+<PropsTable of={Popover} />
+
+### position
+
+Set the position of the popover by setting the `position` prop to one of: `top`, `right`, `bottom` or `left`
+
+<Playground>
+  <Popover position="top" target={<Button kind="primary">target</Button>}>
+    <Card>
+      <Card.Header>card header</Card.Header>
+      <Card.Body>card body</Card.Body>
+      <Card.Footer>card footer</Card.Footer>
+    </Card>
+  </Popover>
+</Playground>

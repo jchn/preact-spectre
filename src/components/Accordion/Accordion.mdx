@@ -1,0 +1,50 @@
+---
+name: Accordion
+---
+
+# Accordion
+
+import Accordion from './Accordion'
+import { Playground, PropsTable } from 'docz'
+
+## Properties
+
+<PropsTable of={Accordion} />
+
+### Default
+
+The default Accordion component:
+
+<Playground>
+  <Accordion uid="accordion-1">
+    <Accordion.Item title="Elements">Element 1</Accordion.Item>
+    <Accordion.Item title="Layouts">Layout 1</Accordion.Item>
+    <Accordion.Item key="elements-3" title="Components">
+      Component 1
+    </Accordion.Item>
+  </Accordion>
+</Playground>
+
+### Arrow
+
+Add the `arrow` prop to place arrows in front of the `Accordion.Item`s:
+
+<Playground>
+  <Accordion arrow uid="accordion-2">
+    <Accordion.Item title="Elements">Element 1</Accordion.Item>
+    <Accordion.Item title="Layouts">Layout 1</Accordion.Item>
+    <Accordion.Item title="Components">Component 1</Accordion.Item>
+  </Accordion>
+</Playground>
+
+### Exclusive
+
+Add the `exclusive` prop to have only a single item open at a time
+
+<Playground>
+  <Accordion exclusive arrow uid="accordion-3">
+    <Accordion.Item title="Elements">Element 1</Accordion.Item>
+    <Accordion.Item title="Layouts">Layout 1</Accordion.Item>
+    <Accordion.Item title="Components">Component 1</Accordion.Item>
+  </Accordion>
+</Playground>

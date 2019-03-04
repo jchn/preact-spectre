@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import React from 'react'
 import { createComponent } from '../../utils'
 
 const Base = createComponent('div', 'chip')

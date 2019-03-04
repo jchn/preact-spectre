@@ -1,15 +1,18 @@
 import { h } from 'preact'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
-const ColumnsClassModifiers = {
+const GridClassModifiers = {
   size: size => `grid-${size}`,
 }
 
-const Columns = createComponent('div', 'container', ColumnsClassModifiers)
+const GridBase = createComponent('div', 'container', GridClassModifiers)
 
-Columns.propTypes = {
+const Grid = props => <GridBase {...props} />
+
+Grid.propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 }
 
-export default Columns
+export default Grid

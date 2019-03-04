@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { createComponent, withClassModifiers } from '../../utils'
 
