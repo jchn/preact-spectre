@@ -4,11 +4,11 @@
   "description": "Preact components using spectre.css",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "g": "plop component",
     "g:recipe": "plop recipe",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "keywords": [
     "preact",
@@ -21,24 +21,23 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
-    "@storybook/addon-actions": "^4.1.11",
-    "@storybook/addon-centered": "^4.1.11",
-    "@storybook/addon-info": "^4.1.13",
-    "@storybook/addon-links": "^4.1.11",
-    "@storybook/addon-options": "^4.1.11",
-    "@storybook/addons": "^4.1.11",
-    "@storybook/react": "^4.1.11",
+    "@emotion/core": "^10.0.7",
     "babel-core": "^7.0.0-0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-preact": "^1.1.0",
+    "docz": "latest",
+    "docz-theme-default": "latest",
     "faker": "^4.1.0",
     "highlight.js": "^9.15.6",
     "jest": "^24.1.0",
     "js-beautify": "^1.8.9",
     "plop": "^2.2.0",
-    "preact-compat": "^3.18.4"
+    "preact-compat": "^3.18.4",
+    "react": "^16.8.3",
+    "webpack-merge": "^4.2.1"
   }
 }
