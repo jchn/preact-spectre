@@ -1,10 +1,10 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Table from './'
 
 storiesOf('Elements|Table', module)
-  .addDecorator(centered)
   .add('Default', () => (
     <Table>
       <thead>

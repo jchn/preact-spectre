@@ -1,6 +1,7 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 
 import Panel from '../../components/Panel'
 import Button from '../../components/Button'
@@ -90,7 +91,7 @@ storiesOf('Recipes|Profile', module).add('Default', () => (
             </Tile>
           </Panel.Body>
           <Panel.Footer>
-            <Button block intent="primary">
+            <Button block kind="primary">
               Save
             </Button>
           </Panel.Footer>

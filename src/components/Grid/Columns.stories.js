@@ -1,5 +1,6 @@
+/** @jsx h */
 import { h } from 'preact'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Grid from './'
 
 const times = (cb, i) => new Array(i).fill(null).map((_, i) => cb(i))

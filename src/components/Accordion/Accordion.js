@@ -1,5 +1,6 @@
-// import { h, cloneElement } from 'preact'
-import React, { cloneElement } from 'react'
+/** @jsx h */
+
+import { h, cloneElement } from 'preact'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 

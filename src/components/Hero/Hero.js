@@ -1,5 +1,3 @@
-import { h } from 'preact'
-import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
 const HeroClassModifiers = {}

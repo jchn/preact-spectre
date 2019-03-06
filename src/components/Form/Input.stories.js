@@ -1,11 +1,11 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Form from './'
 import faker from 'faker'
 
 storiesOf('Elements|Form/Input', module)
-  .addDecorator(centered)
   .add('Default', () => <Form.Input placeholder="Name" id="input-name" />)
   .add('disabled', () => (
     <Form.Input disabled placeholder="Name" id="input-name" />
@@ -16,7 +16,6 @@ storiesOf('Elements|Form/Input', module)
   .add('error', () => <Form.Input error placeholder="Name" id="input-name" />)
 
 storiesOf('Elements|Form/Input/validation', module)
-  .addDecorator(centered)
   .add('error', () => (
     <Form.Group error>
       <Form.Label for="input-email">Email</Form.Label>

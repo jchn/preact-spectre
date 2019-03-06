@@ -1,6 +1,7 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 
 import faker from 'faker'
 import Tile from '../../components/Tile'
@@ -24,37 +25,35 @@ const Comment = ({ author, avatar, children }) => (
   </Tile>
 )
 
-storiesOf('Recipes|Comments', module)
-  .addDecorator(centered)
-  .add('Default', () => (
-    <Grid size="md">
-      <Grid.Columns>
-        <Grid.Col col={[12, 8, 6]} class="col-mx-auto">
-          <Panel style={{ height: '75vh' }}>
-            <Panel.Header class="h6">Comments</Panel.Header>
-            <Panel.Body>
-              {times(
-                i => (
-                  <Comment
-                    author={faker.name.firstName()}
-                    avatar={faker.internet.avatar()}
-                  >
-                    <p>{faker.lorem.paragraph()}</p>
-                  </Comment>
-                ),
-                3
-              )}
-            </Panel.Body>
-            <Panel.Footer>
-              <div class="input-group">
-                <Form.Input placeholder="Hello" />
-                <Button class="input-group-btn" intent="primary">
-                  Send
-                </Button>
-              </div>
-            </Panel.Footer>
-          </Panel>
-        </Grid.Col>
-      </Grid.Columns>
-    </Grid>
-  ))
+storiesOf('Recipes|Comments', module).add('Default', () => (
+  <Grid size="md">
+    <Grid.Columns>
+      <Grid.Col col={[12, 8, 6]} class="col-mx-auto">
+        <Panel style={{ height: '75vh' }}>
+          <Panel.Header class="h6">Comments</Panel.Header>
+          <Panel.Body>
+            {times(
+              i => (
+                <Comment
+                  author={faker.name.firstName()}
+                  avatar={faker.internet.avatar()}
+                >
+                  <p>{faker.lorem.paragraph()}</p>
+                </Comment>
+              ),
+              3
+            )}
+          </Panel.Body>
+          <Panel.Footer>
+            <div class="input-group">
+              <Form.Input placeholder="Hello" />
+              <Button class="input-group-btn" kind="primary">
+                Send
+              </Button>
+            </div>
+          </Panel.Footer>
+        </Panel>
+      </Grid.Col>
+    </Grid.Columns>
+  </Grid>
+))

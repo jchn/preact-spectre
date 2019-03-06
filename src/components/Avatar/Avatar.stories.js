@@ -1,11 +1,11 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Avatar from './'
 import faker from 'faker'
 
 storiesOf('Components|Avatar/presence', module)
-  .addDecorator(centered)
   .add('online', () => (
     <Avatar
       presence="online"
@@ -35,7 +35,6 @@ storiesOf('Components|Avatar/presence', module)
   ))
 
 storiesOf('Components|Avatar/size', module)
-  .addDecorator(centered)
   .add('xs', () => (
     <Avatar
       size="xs"

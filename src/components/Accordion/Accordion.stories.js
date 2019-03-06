@@ -1,6 +1,8 @@
+/** @jsx h */
+
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Accordion from './'
 
 storiesOf('Components|Accordion', module)

@@ -1,6 +1,7 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Tile from './'
 import Avatar from '../Avatar'
 import Button from '../Button'

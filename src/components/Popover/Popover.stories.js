@@ -1,24 +1,22 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Popover from './'
 import Button from '../Button'
 import Card from '../Card'
 
-storiesOf('Components|Popover', module)
-  .addDecorator(centered)
-  .add('Default', () => (
-    <Popover target={<Button primary>popover</Button>}>
-      <Card>
-        <Card.Header>card header</Card.Header>
-        <Card.Body>card body</Card.Body>
-        <Card.Footer>card footer</Card.Footer>
-      </Card>
-    </Popover>
-  ))
+storiesOf('Components|Popover', module).add('Default', () => (
+  <Popover target={<Button primary>popover</Button>}>
+    <Card>
+      <Card.Header>card header</Card.Header>
+      <Card.Body>card body</Card.Body>
+      <Card.Footer>card footer</Card.Footer>
+    </Card>
+  </Popover>
+))
 
 storiesOf('Components|Popover/position', module)
-  .addDecorator(centered)
   .add('top', () => (
     <Popover position="top" target={<Button primary>top popover</Button>}>
       <Card>

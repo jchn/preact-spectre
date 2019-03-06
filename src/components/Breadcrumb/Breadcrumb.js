@@ -1,5 +1,5 @@
+/** @jsx h */
 import { h } from 'preact'
-import React from 'react'
 import { createComponent } from '../../utils'
 
 const BreadcrumbBase = createComponent('ul', 'breadcrumb')

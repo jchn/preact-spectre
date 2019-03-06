@@ -8,7 +8,8 @@
     "g:recipe": "plop recipe",
     "test": "jest --watch",
     "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "keywords": [
     "preact",
@@ -24,6 +25,8 @@
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
     "@emotion/core": "^10.0.7",
+    "@storybook/addon-centered": "^5.0.0",
+    "@storybook/preact": "^5.0.0",
     "babel-core": "^7.0.0-0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

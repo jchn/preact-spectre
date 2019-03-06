@@ -1,11 +1,11 @@
+/** @jsx h */
 import { h } from 'preact'
 import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Empty from './'
 import Button from '../Button'
 
 storiesOf('Components|Empty', module)
-  .addDecorator(centered)
   .add('Default', () => (
     <Empty>
       <Empty.Icon>

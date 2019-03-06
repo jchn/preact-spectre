@@ -1,5 +1,6 @@
+/** @jsx h */
 import { h } from 'preact'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Bar from './'
 
 storiesOf('Components|Bar', module).add('items', () => (
