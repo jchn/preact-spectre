@@ -9,7 +9,8 @@
     "test": "jest --watch",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "preact",
