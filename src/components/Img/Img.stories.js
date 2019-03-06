@@ -1,11 +1,12 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Img from './'
 import faker from 'faker'
 
 storiesOf('Elements|Img', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Img
       src={faker.image.nature(800, 600)}
@@ -25,6 +26,7 @@ storiesOf('Elements|Img', module)
   ))
 
 storiesOf('Elements|Img/fit', module)
+  .addDecorator(Centered)
   .add('contain', () => (
     <Img
       responsive

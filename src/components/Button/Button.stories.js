@@ -1,10 +1,11 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Button from './'
 
 storiesOf('Elements|Button', module)
+  .addDecorator(Centered)
   .add('Default', () => <Button>default button</Button>)
   .add('link', () => <Button link>link button</Button>)
   .add('loading', () => <Button loading>loading button</Button>)
@@ -12,10 +13,12 @@ storiesOf('Elements|Button', module)
   .add('disabled', () => <Button disabled>disabled button</Button>)
 
 storiesOf('Elements|Button/kind', module)
+  .addDecorator(Centered)
   .add('primary', () => <Button kind="primary">primary button</Button>)
   .add('success', () => <Button kind="success">success button</Button>)
   .add('error', () => <Button kind="error">error button</Button>)
 
 storiesOf('Elements|Button/shape', module)
+  .addDecorator(Centered)
   .add('square', () => <Button shape="square" kind="primary" />)
   .add('circle', () => <Button shape="circle" kind="primary" />)

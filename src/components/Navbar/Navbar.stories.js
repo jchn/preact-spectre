@@ -1,9 +1,11 @@
 /** @jsx h */
 import { h } from 'preact'
 import { storiesOf } from '@storybook/preact'
+import Centered from '@storybook/addon-centered/preact'
 import Navbar from './'
 
 storiesOf('Layout|Navbar', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Navbar>
       <Navbar.Section>

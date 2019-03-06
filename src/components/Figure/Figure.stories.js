@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Figure from './'
 import Img from '../Img'

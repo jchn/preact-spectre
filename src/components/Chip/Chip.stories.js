@@ -1,10 +1,10 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Chip from './'
 
-storiesOf('Components|Chip', module).add('Default', () => (
+storiesOf('Components|Chip', module).addDecorator(Centered).add('Default', () => (
   <div>
     <Chip>Crime</Chip>
     <Chip>Drama</Chip>

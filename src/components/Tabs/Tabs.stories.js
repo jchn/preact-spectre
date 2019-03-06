@@ -1,10 +1,11 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Tabs from './'
 
 storiesOf('Components|Tabs', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Tabs>
       <Tabs.Item active>

@@ -1,11 +1,12 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Empty from './'
 import Button from '../Button'
 
 storiesOf('Components|Empty', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Empty>
       <Empty.Icon>
@@ -23,7 +24,7 @@ storiesOf('Components|Empty', module)
       <Empty.Title>You have no new messages</Empty.Title>
       <Empty.Subtitle>Click the button to start a conversation.</Empty.Subtitle>
       <Empty.Action>
-        <Button primary>Send a message</Button>
+        <Button kind="primary">Send a message</Button>
       </Empty.Action>
     </Empty>
   ))

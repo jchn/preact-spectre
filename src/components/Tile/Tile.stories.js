@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Tile from './'
 import Avatar from '../Avatar'
@@ -8,6 +8,7 @@ import Button from '../Button'
 import faker from 'faker'
 
 storiesOf('Components|Tile', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Tile>
       <Tile.Icon>
