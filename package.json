@@ -27,6 +27,7 @@
     "@babel/preset-env": "^7.3.4",
     "@emotion/core": "^10.0.7",
     "@storybook/addon-centered": "^5.0.0",
+    "@storybook/addon-storysource": "^5.0.0",
     "@storybook/preact": "^5.0.0",
     "babel-core": "^7.0.0-0",
     "babel-loader": "^7.1.5",
