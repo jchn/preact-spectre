@@ -1,11 +1,13 @@
 /** @jsx h */
 import { h } from 'preact'
 import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import { storiesOf } from '@storybook/preact'
 import Empty from './'
 import Button from '../Button'
 
 storiesOf('Components|Empty', module)
+  .addDecorator(withColumn([12, 8, 6]))
   .addDecorator(Centered)
   .add('Default', () => (
     <Empty>

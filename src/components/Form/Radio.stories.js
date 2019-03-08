@@ -1,10 +1,11 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered/preact'
+import Centered from '@storybook/addon-centered/preact'
 import { storiesOf } from '@storybook/preact'
 import Form from './'
 
 storiesOf('Elements|Form/Radio', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Form.Group>
       <Form.Radio name="option" label="Remember me" />

@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import { storiesOf } from '@storybook/preact'
 import Pagination from './'
 
@@ -35,6 +36,7 @@ storiesOf('Components|Pagination', module)
   ))
 
 storiesOf('Components|Pagination', module)
+  .addDecorator(withColumn(12))
   .addDecorator(Centered)
   .add('steps', () => (
     <Pagination>

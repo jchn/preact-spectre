@@ -2,9 +2,11 @@
 import { h } from 'preact'
 import { storiesOf } from '@storybook/preact'
 import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import Bar from './'
 
 storiesOf('Components|Bar', module)
+  .addDecorator(withColumn(6))
   .addDecorator(Centered)
   .add('items', () => (
     <Bar>
@@ -27,9 +29,6 @@ storiesOf('Components|Bar', module)
       />
     </Bar>
   ))
-
-storiesOf('Components|Bar', module)
-  .addDecorator(Centered)
   .add('slider', () => (
     <Bar slider>
       <Bar.Item

@@ -1,10 +1,13 @@
 /** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered/preact'
+import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import { storiesOf } from '@storybook/preact'
 import Form from './'
 
 storiesOf('Elements|Form/Select', module)
+  .addDecorator(withColumn([12, 8, 6]))
+  .addDecorator(Centered)
   .add('Default', () => (
     <Form.Group>
       <Form.Select>

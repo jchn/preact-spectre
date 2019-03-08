@@ -20,5 +20,13 @@ storiesOf('Elements|Button/kind', module)
 
 storiesOf('Elements|Button/shape', module)
   .addDecorator(Centered)
-  .add('square', () => <Button shape="square" kind="primary" />)
-  .add('circle', () => <Button shape="circle" kind="primary" />)
+  .add('square', () => (
+    <Button shape="square" kind="primary">
+      <i class="icon icon-menu" />
+    </Button>
+  ))
+  .add('circle', () => (
+    <Button shape="circle" kind="primary">
+      <i class="icon icon-menu" />
+    </Button>
+  ))

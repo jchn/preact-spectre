@@ -1,11 +1,13 @@
 /** @jsx h */
 import { h } from 'preact'
 import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import { storiesOf } from '@storybook/preact'
 import Menu from './'
 import Label from '../Label'
 
 storiesOf('Components|Menu', module)
+  .addDecorator(withColumn([12, 8, 4]))
   .addDecorator(Centered)
   .add('Default', () => (
     <Menu>

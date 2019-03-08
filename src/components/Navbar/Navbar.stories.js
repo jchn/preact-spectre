@@ -2,9 +2,11 @@
 import { h } from 'preact'
 import { storiesOf } from '@storybook/preact'
 import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
 import Navbar from './'
 
 storiesOf('Layout|Navbar', module)
+  .addDecorator(withColumn(12))
   .addDecorator(Centered)
   .add('Default', () => (
     <Navbar>
