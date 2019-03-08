@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
     "@emotion/core": "^10.0.7",
@@ -32,8 +33,6 @@
     "babel-core": "^7.0.0-0",
     "babel-loader": "^7.1.5",
     "babel-plugin-react-docgen": "^2.0.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-preact": "^1.1.0",
     "docz": "latest",
     "docz-theme-default": "latest",
