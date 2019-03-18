@@ -1,6 +1,6 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
 import Modal from './'
 import Button from '../Button'
 

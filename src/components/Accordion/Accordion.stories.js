@@ -1,9 +1,12 @@
+/** @jsx h */
+
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { storiesOf } from '@storybook/preact'
 import Accordion from './'
 
 storiesOf('Components|Accordion', module)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Accordion>
       <Accordion.Item title="Elements">Element 1</Accordion.Item>

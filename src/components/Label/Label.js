@@ -1,22 +1,26 @@
+/** @jsx h */
 import { h } from 'preact'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
 const labelClassModifiers = {
   rounded: 'label-rounded',
-  intent: intent => `label-${intent}`,
+  kind: kind => `label-${kind}`,
 }
 
-const Label = createComponent('span', 'label', labelClassModifiers)
+const LabelBase = createComponent('span', 'label', labelClassModifiers)
+
+const Label = props => <LabelBase {...props} />
 
 Label.propTypes = {
-  intent: PropTypes.oneOf([
+  kind: PropTypes.oneOf([
     'primary',
     'secondary',
     'success',
     'warning',
     'error',
   ]),
+  rounded: PropTypes.bool,
 }
 
 export default Label

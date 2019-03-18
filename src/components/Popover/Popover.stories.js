@@ -1,14 +1,15 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { storiesOf } from '@storybook/preact'
 import Popover from './'
 import Button from '../Button'
 import Card from '../Card'
 
 storiesOf('Components|Popover', module)
-  .addDecorator(centered)
+  .addDecorator(Centered)
   .add('Default', () => (
-    <Popover target={<Button primary>popover</Button>}>
+    <Popover target={<Button kind="primary">popover</Button>}>
       <Card>
         <Card.Header>card header</Card.Header>
         <Card.Body>card body</Card.Body>
@@ -18,9 +19,12 @@ storiesOf('Components|Popover', module)
   ))
 
 storiesOf('Components|Popover/position', module)
-  .addDecorator(centered)
+  .addDecorator(Centered)
   .add('top', () => (
-    <Popover position="top" target={<Button primary>top popover</Button>}>
+    <Popover
+      position="top"
+      target={<Button kind="primary">top popover</Button>}
+    >
       <Card>
         <Card.Header>card header</Card.Header>
         <Card.Body>card body</Card.Body>
@@ -29,7 +33,10 @@ storiesOf('Components|Popover/position', module)
     </Popover>
   ))
   .add('right', () => (
-    <Popover position="right" target={<Button primary>right popover</Button>}>
+    <Popover
+      position="right"
+      target={<Button kind="primary">right popover</Button>}
+    >
       <Card>
         <Card.Header>card header</Card.Header>
         <Card.Body>card body</Card.Body>
@@ -38,7 +45,10 @@ storiesOf('Components|Popover/position', module)
     </Popover>
   ))
   .add('bottom', () => (
-    <Popover position="bottom" target={<Button primary>bottom popover</Button>}>
+    <Popover
+      position="bottom"
+      target={<Button kind="primary">bottom popover</Button>}
+    >
       <Card>
         <Card.Header>card header</Card.Header>
         <Card.Body>card body</Card.Body>
@@ -47,7 +57,10 @@ storiesOf('Components|Popover/position', module)
     </Popover>
   ))
   .add('left', () => (
-    <Popover position="left" target={<Button primary>left popover</Button>}>
+    <Popover
+      position="left"
+      target={<Button kind="primary">left popover</Button>}
+    >
       <Card>
         <Card.Header>card header</Card.Header>
         <Card.Body>card body</Card.Body>

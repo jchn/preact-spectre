@@ -1,10 +1,13 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { withDecorator, withColumn } from '../../../.storybook/withWrapper'
+import { storiesOf } from '@storybook/preact'
 import Form from './'
 
 storiesOf('Elements|Form/Textarea', module)
-  .addDecorator(centered)
+  .addDecorator(withColumn([12, 8, 6]))
+  .addDecorator(Centered)
   .add('Default', () => (
     <Form.Textarea placeholder="Textarea" rows="3" id="input-textarea" />
   ))

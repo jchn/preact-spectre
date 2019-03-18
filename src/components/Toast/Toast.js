@@ -1,14 +1,18 @@
+/** @jsx h */
+import { h } from 'preact'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
 const toastClassModifiers = {
-  intent: intent => `toast-${intent}`,
+  kind: kind => `toast-${kind}`,
 }
 
-const Toast = createComponent('div', 'toast', toastClassModifiers)
+const ToastBase = createComponent('div', 'toast', toastClassModifiers)
+
+const Toast = props => <ToastBase {...props} />
 
 Toast.propTypes = {
-  intent: PropTypes.oneOf(['primary', 'success', 'warning', 'error']),
+  kind: PropTypes.oneOf(['primary', 'success', 'warning', 'error']),
 }
 
 export default Toast

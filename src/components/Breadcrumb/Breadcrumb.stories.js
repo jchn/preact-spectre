@@ -1,10 +1,11 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/preact'
+import Centered from '@storybook/addon-centered/preact'
 import Breadcrumb from './'
 
 storiesOf('Components|Breadcrumb', module)
-  .addDecorator(centered)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Breadcrumb>
       <Breadcrumb.Item>

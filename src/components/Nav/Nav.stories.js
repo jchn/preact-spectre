@@ -1,10 +1,11 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { storiesOf } from '@storybook/preact'
 import Nav from './'
 
 storiesOf('Components|Nav', module)
-  .addDecorator(centered)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Nav>
       <Nav.Item>

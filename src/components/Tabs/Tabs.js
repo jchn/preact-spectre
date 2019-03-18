@@ -1,3 +1,5 @@
+/** @jsx h */
+import { h } from 'preact'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
@@ -5,7 +7,9 @@ const tabsClassModifiers = {
   block: 'tab-block',
 }
 
-const Tabs = createComponent('ul', 'tab', tabsClassModifiers)
+const TabsBase = createComponent('ul', 'tab', tabsClassModifiers)
+
+const Tabs = props => <TabsBase {...props} />
 
 Tabs.propTypes = {
   block: PropTypes.bool,

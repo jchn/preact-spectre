@@ -1,10 +1,12 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
+import { storiesOf } from '@storybook/preact'
 import Video from './'
 
 storiesOf('Elements|Video', module)
-  .addDecorator(centered)
+  .addDecorator(Centered)
   .add('Default', () => (
     <Video>
       <iframe
@@ -12,13 +14,14 @@ storiesOf('Elements|Video', module)
         height="315"
         src="https://www.youtube.com/embed/eRsGyueVLvQ"
         frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
     </Video>
   ))
 
 storiesOf('Elements|Video/responsive', module)
+  .addDecorator(withColumn([12, 8, 6]))
+  .addDecorator(Centered)
   .add('Default', () => (
     <Video responsive>
       <iframe
@@ -26,7 +29,6 @@ storiesOf('Elements|Video/responsive', module)
         height="315"
         src="https://www.youtube.com/embed/eRsGyueVLvQ"
         frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
     </Video>
@@ -38,7 +40,6 @@ storiesOf('Elements|Video/responsive', module)
         height="315"
         src="https://www.youtube.com/embed/eRsGyueVLvQ"
         frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
     </Video>

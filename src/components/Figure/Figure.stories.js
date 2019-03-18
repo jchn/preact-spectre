@@ -1,12 +1,15 @@
+/** @jsx h */
 import { h } from 'preact'
-import centered from '@storybook/addon-centered'
-import { storiesOf } from '@storybook/react'
+import Centered from '@storybook/addon-centered/preact'
+import { withColumn } from '../../../.storybook/withWrapper'
+import { storiesOf } from '@storybook/preact'
 import Figure from './'
 import Img from '../Img'
 import faker from 'faker'
 
 storiesOf('Elements|Figure', module)
-  .addDecorator(centered)
+  .addDecorator(withColumn([12, 8, 6]))
+  .addDecorator(Centered)
   .add('Default', () => (
     <Figure>
       <Img

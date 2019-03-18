@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact'
 
 export const mapPropsToClasses = (mapping, props) =>

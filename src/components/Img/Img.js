@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact'
 import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
@@ -7,7 +8,9 @@ const ImgClassModifiers = {
   fit: fit => `img-fit-${fit}`,
 }
 
-const Img = createComponent('img', 'img', ImgClassModifiers)
+const ImgBase = createComponent('img', 'img', ImgClassModifiers)
+
+const Img = props => <ImgBase {...props} />
 
 Img.propTypes = {
   responsive: PropTypes.bool,

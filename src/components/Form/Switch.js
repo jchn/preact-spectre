@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact'
 import { createComponent } from '../../utils'
 import inputClassModifiers from './inputClassModifiers'

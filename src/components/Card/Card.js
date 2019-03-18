@@ -1,15 +1,14 @@
+/** @jsx h */
 import { h } from 'preact'
+import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 import Img from '../Img'
 
-const Card = createComponent('div', 'card')
+const CardBase = createComponent('div', 'card')
 
-const CardImage = ({ src, alt, ...props }) => (
-  <div class="card-image" {...props}>
-    <Img src={src} alt={alt} responsive />
-  </div>
-)
+const Card = props => <CardBase {...props} />
 
+const CardImage = createComponent('div', 'card-image')
 const CardHeader = createComponent('div', 'card-header')
 const CardTitle = createComponent('div', 'card-title')
 const CardSubtitle = createComponent('div', 'card-subtitle')

@@ -1,4 +1,6 @@
+/** @jsx h */
 import { h } from 'preact'
+import PropTypes from 'prop-types'
 import { createComponent } from '../../utils'
 
 const barClassModifiers = {
@@ -6,7 +8,9 @@ const barClassModifiers = {
   slider: 'bar-slider',
 }
 
-const Bar = createComponent('div', 'bar', barClassModifiers)
+const Base = createComponent('div', 'bar', barClassModifiers)
+
+const Bar = props => <Base {...props} />
 
 const BarItemBase = createComponent('div', 'bar-item')
 
@@ -17,6 +21,11 @@ const BarItem = ({ progress, children, background, ...props }) => (
 )
 
 const SliderButton = createComponent('div', 'bar-slider-btn btn')
+
+Bar.propTypes = {
+  sm: PropTypes.bool,
+  slider: PropTypes.bool,
+}
 
 Bar.Item = BarItem
 Bar.SliderButton = SliderButton
