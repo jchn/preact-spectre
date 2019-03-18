@@ -13,7 +13,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
     "babel": "babel --presets=@babel/preset-react --plugins=@babel/plugin-proposal-object-rest-spread --no-babelrc -d build --ignore '*.stories.js' src",
-    "build": "npm run -s babel && microbundle"
+    "build": "npm run -s babel && microbundle",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "preact",
