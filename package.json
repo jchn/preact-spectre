@@ -1,14 +1,20 @@
 {
-  "name": "preact-spectre",
-  "version": "1.0.0",
+  "name": "@jchn/preact-spectre",
+  "version": "0.0.1",
   "description": "Preact components using spectre.css",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "source": "build/index.js",
   "scripts": {
     "g": "plop component",
     "g:recipe": "plop recipe",
     "test": "jest --watch",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "babel": "babel --presets=@babel/preset-react --plugins=@babel/plugin-proposal-object-rest-spread --no-babelrc -d build --ignore '*.stories.js' src",
+    "build": "npm run -s babel && microbundle",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "preact",
@@ -20,10 +26,13 @@
     "preact": "^8.4.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.7",
     "@storybook/addon-centered": "^5.0.3",
     "@storybook/addon-storysource": "^5.0.3",
@@ -36,6 +45,7 @@
     "highlight.js": "^9.15.6",
     "jest": "^24.1.0",
     "js-beautify": "^1.8.9",
+    "microbundle": "^0.11.0",
     "plop": "^2.2.0",
     "preact-compat": "^3.18.4",
     "react": "^16.8.3",

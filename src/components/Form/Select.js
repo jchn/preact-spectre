@@ -1,4 +1,4 @@
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 import inputClassModifiers from './inputClassModifiers'
 
 const selectClassModifiers = {
