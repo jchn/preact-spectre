@@ -7,8 +7,6 @@
     "g": "plop component",
     "g:recipe": "plop recipe",
     "test": "jest --watch",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook"
   },
@@ -34,8 +32,6 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-react-docgen": "^2.0.2",
     "babel-preset-preact": "^1.1.0",
-    "docz": "latest",
-    "docz-theme-default": "latest",
     "faker": "^4.1.0",
     "highlight.js": "^9.15.6",
     "jest": "^24.1.0",
