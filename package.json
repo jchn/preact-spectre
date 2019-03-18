@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook",
     "babel": "babel --presets=@babel/preset-react --plugins=@babel/plugin-proposal-object-rest-spread --no-babelrc -d build --ignore '*.stories.js' src",
     "build": "npm run -s babel && microbundle",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "keywords": [
     "preact",
@@ -23,7 +23,12 @@
   "author": "John van de Water",
   "license": "MIT",
   "dependencies": {
-    "preact": "^8.4.2"
+    "preact": "^8.4.2",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "preact": "^8.4.2",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
