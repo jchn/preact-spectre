@@ -1,6 +1,6 @@
 {
-  "name": "preact-spectre",
-  "version": "1.0.0",
+  "name": "@jchn/preact-spectre",
+  "version": "0.0.1",
   "description": "Preact components using spectre.css",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
@@ -12,7 +12,7 @@
     "test": "jest --watch",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
-    "babel": "babel --presets=@babel/preset-react --plugins=@babel/plugin-proposal-object-rest-spread --no-babelrc -d build --ignore '*.test.js' src",
+    "babel": "babel --presets=@babel/preset-react --plugins=@babel/plugin-proposal-object-rest-spread --no-babelrc -d build --ignore '*.stories.js' src",
     "build": "npm run -s babel && microbundle"
   },
   "keywords": [
