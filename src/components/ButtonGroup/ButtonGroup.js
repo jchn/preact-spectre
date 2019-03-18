@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { createComponent, withClassModifiers } from '../../utils'
+import { createComponent } from '../../utils'
 
 const buttonGroupModifiers = {
   block: 'btn-group-block',

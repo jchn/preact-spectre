@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import { withClassModifiers, createComponent } from '../../utils'
+import { createComponent } from '../../utils'
 
 const tableModifiers = {
   scroll: 'table-scroll',

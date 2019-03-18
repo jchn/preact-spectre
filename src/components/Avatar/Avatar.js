@@ -1,12 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import PropTypes from 'prop-types'
-import {
-  createComponent,
-  pipe,
-  withClassModifiers,
-  withToDOMAttrs,
-} from '../../utils'
+import { createComponent } from '../../utils'
 
 const avatarClassModifiers = {
   size: size => `avatar-${size}`,
